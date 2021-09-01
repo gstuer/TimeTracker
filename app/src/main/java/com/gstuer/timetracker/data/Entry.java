@@ -2,10 +2,12 @@ package com.gstuer.timetracker.data;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalTime;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Entry {
     private static final String JSON_PATTERN_TIME = "HH:mm";
     private static final String JSON_ALIAS_DESCRIPTION = "action";
@@ -13,7 +15,6 @@ public class Entry {
     private static final String JSON_ALIAS_START = "start";
     private static final String JSON_ALIAS_END = "end";
     private static final String JSON_ALIAS_VACATION = "vacation";
-    private static final boolean DEFAULT_IS_VACATION = false;
 
     @JsonProperty(JSON_ALIAS_DESCRIPTION) private final String description;
     @JsonProperty(JSON_ALIAS_DAY) private final int day;
@@ -34,8 +35,8 @@ public class Entry {
         this.isVacation = isVacation;
     }
 
-    public Entry(String description, int day, LocalTime start) {
-        this(description, day, start, null, DEFAULT_IS_VACATION);
+    public Entry(String description, int day, LocalTime start, boolean isVacation) {
+        this(description, day, start, null, isVacation);
     }
 
     public String getDescription() {
