@@ -25,6 +25,8 @@ dependencies {
 
     // This dependency is used by the application.
     implementation("com.google.guava:guava:29.0-jre")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.12.5")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.12.5")
 }
 
 application {
