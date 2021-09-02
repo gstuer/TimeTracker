@@ -95,7 +95,8 @@ public enum Command {
     PAUSE("pause") {
         @Override
         public CommandResult execute(String[] parameters) {
-            return null;
+            // TODO Implement command
+            return new CommandResult(false, "Not implemented yet.");
         }
     };
 
