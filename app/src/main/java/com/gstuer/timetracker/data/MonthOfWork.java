@@ -36,10 +36,17 @@ public class MonthOfWork {
     }
 
     public void addEntry(Entry entry) {
+        if (existsCollision(entry)) {
+            throw new IllegalArgumentException("Cannot add entry due to collision.");
+        }
         this.entries.add(entry);
     }
 
     public void removeEntry(Entry entry) {
         this.entries.remove(entry);
+    }
+
+    public boolean existsCollision(Entry entry) {
+        return this.getEntries().stream().anyMatch(other -> new Collision().test(entry, other));
     }
 }

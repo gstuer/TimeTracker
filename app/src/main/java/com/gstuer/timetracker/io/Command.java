@@ -40,9 +40,7 @@ public enum Command {
                     LocalTime.MAX, false);
 
             // Check if a collision exists with a started entry
-            boolean existsCollision = monthOfWork.getEntries().stream()
-                    .anyMatch(other -> new Collision().test(entry, other));
-            if (existsCollision) {
+            if (monthOfWork.existsCollision(entry)) {
                 return new CommandResult(false, "Tracker already started.");
             }
 
