@@ -10,9 +10,12 @@ public class MonthOfWork {
     private static final String JSON_ALIAS_MONTH = "month";
     private static final String JSON_ALIAS_ENTRIES = "entries";
 
-    @JsonProperty(JSON_ALIAS_YEAR) private final int year;
-    @JsonProperty(JSON_ALIAS_MONTH) private final int month;
-    @JsonProperty(JSON_ALIAS_ENTRIES) private final List<Entry> entries;
+    @JsonProperty(JSON_ALIAS_YEAR)
+    private final int year;
+    @JsonProperty(JSON_ALIAS_MONTH)
+    private final int month;
+    @JsonProperty(JSON_ALIAS_ENTRIES)
+    private final List<Entry> entries;
 
     @JsonCreator
     public MonthOfWork(@JsonProperty(JSON_ALIAS_YEAR) int year,

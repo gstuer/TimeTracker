@@ -16,11 +16,18 @@ public class Entry {
     private static final String JSON_ALIAS_END = "end";
     private static final String JSON_ALIAS_VACATION = "vacation";
 
-    @JsonProperty(JSON_ALIAS_DESCRIPTION) private final String description;
-    @JsonProperty(JSON_ALIAS_DAY) private final int day;
-    @JsonProperty(JSON_ALIAS_START) @JsonFormat(pattern = JSON_PATTERN_TIME) private final LocalTime start;
-    @JsonProperty(JSON_ALIAS_END) @JsonFormat(pattern = JSON_PATTERN_TIME) private LocalTime end;
-    @JsonProperty(JSON_ALIAS_VACATION) private boolean isVacation;
+    @JsonProperty(JSON_ALIAS_DESCRIPTION)
+    private final String description;
+    @JsonProperty(JSON_ALIAS_DAY)
+    private final int day;
+    @JsonProperty(JSON_ALIAS_START)
+    @JsonFormat(pattern = JSON_PATTERN_TIME)
+    private final LocalTime start;
+    @JsonProperty(JSON_ALIAS_END)
+    @JsonFormat(pattern = JSON_PATTERN_TIME)
+    private LocalTime end;
+    @JsonProperty(JSON_ALIAS_VACATION)
+    private boolean isVacation;
 
     @JsonCreator
     public Entry(@JsonProperty(JSON_ALIAS_DESCRIPTION) String description,

@@ -1,6 +1,5 @@
 package com.gstuer.timetracker.io;
 
-import com.gstuer.timetracker.data.Collision;
 import com.gstuer.timetracker.data.Entry;
 import com.gstuer.timetracker.data.MonthOfWork;
 
