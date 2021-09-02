@@ -8,7 +8,7 @@ import java.time.YearMonth;
 import java.util.ArrayList;
 
 public class PersistenceService {
-    private static final String PATH_PREFIX = "/TimeTracker/Test/Abcdedae/fasfa";
+    private static final String PATH_PREFIX = "/TimeTrackerData";
     private static final String FILE_PATTERN = "%1$tY_%1$tB.json";
 
     public MonthOfWork getMonthOfWork(YearMonth yearMonth) throws PersistenceException {
